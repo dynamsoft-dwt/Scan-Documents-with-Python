@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Python DWT Hello World</title>
+        <script src="/Resources/dynamsoft.webtwain.initiate.js"></script>
+		<script src="/Resources/dynamsoft.webtwain.config.js"></script>
+    </head>
+    <body>
+        <div id="dwtcontrolContainer"></div>
+		<input type="button" value="Acquire" onclick="AcquireImage();" />
+
+		<!--Custom script goes here-->
+		 <script type="text/javascript">
+			 function AcquireImage(){
+				 DWObject.IfShowUI = false;
+				 DWObject.SelectSource();
+				 DWObject.OpenSource();
+				 DWObject.AcquireImage();
+			 }
+		 </script> 
+		
+    </body>
+</html>
