@@ -14,6 +14,10 @@ Download and Installation
 * [Python 2.7.8][4]
 * [Django 1.7.1][5]
 
+Blog 
+-----------
+[Online Document Scanning Apps with Django and Dynamic Web TWAIN][6]
+
 How to Run:
 -----------
 1. `python manage.py runserver`
@@ -26,3 +30,4 @@ How to Run:
 [3]:https://www.dynamsoft.com/Secure/Register_ClientInfo.aspx?productName=WebTWAIN&from=FromDownload
 [4]:https://www.python.org/downloads/
 [5]:https://www.djangoproject.com/download/
+[6]:http://www.codepool.biz/django/online-document-scanning-apps-with-django-and-dynamic-web-twain.html
