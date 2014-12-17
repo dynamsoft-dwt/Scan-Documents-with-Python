@@ -10,7 +10,7 @@ Screenshots
 Download and Installation 
 -----------
 
-* [Dynamic Web TWAIN 10.0.1][3]
+* [Dynamic Web TWAIN v10.0.1][3]
 * [Python 2.7.8][4]
 * [Django 1.7.1][5]
 
@@ -27,7 +27,7 @@ How to Run:
 
 [1]:http://www.dynamsoft.com/Products/WebTWAIN_Overview.aspx
 [2]:https://www.djangoproject.com/
-[3]:https://www.dynamsoft.com/Secure/Register_ClientInfo.aspx?productName=WebTWAIN&from=FromDownload
+[3]:http://www.dynamsoft.com/download/Dynamic%20Web%20TWAIN%2010.0.1%20TRIAL.exe
 [4]:https://www.python.org/downloads/
 [5]:https://www.djangoproject.com/download/
 [6]:http://www.codepool.biz/django/online-document-scanning-apps-with-django-and-dynamic-web-twain.html
