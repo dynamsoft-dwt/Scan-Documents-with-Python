@@ -11,6 +11,7 @@
 		<!--Custom script goes here-->
 		 <script type="text/javascript">
 			 function AcquireImage(){
+			 var  DWObject = Dynamsoft.WebTwainEnv.GetWebTwain('dwtcontrolContainer');
 				 DWObject.IfShowUI = false;
 				 DWObject.SelectSource();
 				 DWObject.OpenSource();
