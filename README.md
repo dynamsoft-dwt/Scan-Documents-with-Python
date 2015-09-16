@@ -10,7 +10,7 @@ Screenshots
 Download and Installation 
 -----------
 
-* [Dynamic Web TWAIN v10.0.1][3]
+* [Dynamic Web TWAIN 11.1][3]
 * [Python 2.7.8][4]
 * [Django 1.7.1][5]
 
@@ -20,14 +20,16 @@ Blog
 
 How to Run:
 -----------
-1. `python manage.py runserver`
-2. visit 127.0.0.1:8000 in Web browser
+1. download and instal Dynamic Web TWAIN
+2. copy the Resource folder from the installation directory (like C:\Program Files (x86)\Dynamsoft\Dynamic Web TWAIN SDK 11.1 Trial)
+3. `python manage.py runserver`
+4. visit 127.0.0.1:8000 in Web browser
 
 
 
 [1]:http://www.dynamsoft.com/Products/WebTWAIN_Overview.aspx
 [2]:https://www.djangoproject.com/
-[3]:http://www.dynamsoft.com/download/Dynamic%20Web%20TWAIN%2010.0.1%20TRIAL.exe
+[3]:http://www.dynamsoft.com/Downloads/WebTWAIN_Download.aspx
 [4]:https://www.python.org/downloads/
 [5]:https://www.djangoproject.com/download/
 [6]:http://www.codepool.biz/django/online-document-scanning-apps-with-django-and-dynamic-web-twain.html
