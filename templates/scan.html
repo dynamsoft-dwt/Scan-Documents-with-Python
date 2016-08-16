@@ -1,8 +1,8 @@
 <html>
     <head>
         <title>Python DWT Hello World</title>
-        <script src="/Resources/dynamsoft.webtwain.initiate.js"></script>
-		<script src="/Resources/dynamsoft.webtwain.config.js"></script>
+   <script type="text/javascript" src="Resources/dynamsoft.webtwain.initiate.js"> </script>
+			<script type="text/javascript" src="Resources/dynamsoft.webtwain.config.js"> </script>
     </head>
     <body>
         <div id="dwtcontrolContainer"></div>
@@ -10,13 +10,19 @@
 
 		<!--Custom script goes here-->
 		 <script type="text/javascript">
-			 function AcquireImage(){
-			 var  DWObject = Dynamsoft.WebTwainEnv.GetWebTwain('dwtcontrolContainer');
-				 DWObject.IfShowUI = false;
-				 DWObject.SelectSource();
-				 DWObject.OpenSource();
-				 DWObject.AcquireImage();
-			 }
+			Dynamsoft.WebTwainEnv.RegisterEvent('OnWebTwainReady', Dynamsoft_OnReady); // Register OnWebTwainReady event. This event fires as soon as Dynamic Web TWAIN is initialized and ready to be used
+
+        var DWObject;
+
+        function Dynamsoft_OnReady() {
+            DWObject = Dynamsoft.WebTwainEnv.GetWebTwain('dwtcontrolContainer'); // Get the Dynamic Web TWAIN object that is embeded in the div with id 'dwtcontrolContainer'
+}
+            function AcquireImage(){
+            DWObject.IfShowUI = false;
+            DWObject.SelectSource();
+            DWObject.OpenSource();
+            DWObject.AcquireImage();
+            }
 		 </script> 
 		
     </body>
