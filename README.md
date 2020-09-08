@@ -17,7 +17,7 @@ Blog
 How to Run:
 -----------
 1. download and instal Dynamic Web TWAIN
-2. copy the Resource folder from the installation directory (like C:\Program Files (x86)\Dynamsoft\Dynamic Web TWAIN SDK 16.1.1 Trial)
+2. copy the Resource folder from the installation directory (like `C:\Program Files (x86)\Dynamsoft\Dynamic Web TWAIN SDK 16.1.1 Trial`) to `/static/dwt/` (if not exist, create one).
 3. `python manage.py runserver`
 4. visit 127.0.0.1:8000 in Web browser
 
