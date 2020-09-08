@@ -28,4 +28,4 @@ How to Run:
 [3]:http://www.dynamsoft.com/Downloads/WebTWAIN_Download.aspx
 [4]:https://www.python.org/downloads/
 [5]:https://www.djangoproject.com/download/
-[6]:https://www.dynamsoft.com/codepool/online-document-scanning-django-twain.html
+[6]:https://www.dynamsoft.com/codepool/online-document-scanning-django-webtwain.html
