@@ -3,16 +3,12 @@ Online Document Scanning with Django and Dynamic Web TWAIN
 
 The sample shows how to combine [Dynamic Web TWAIN][1] and [Django][2] to implement a simple online document scanning application with a few lines of code. 
 
-Screenshots
------------
-![image](http://www.codepool.biz/wp-content/uploads/2014/11/DWT_diango_scan.png)
-
 Download and Installation 
 -----------
 
-* [Dynamic Web TWAIN 11.1][3]
-* [Python 2.7.8][4]
-* [Django 1.7.1][5]
+* [Dynamic Web TWAIN 16.1][3]
+* [Python 3.8.5][4]
+* [Django 3.1.1][5]
 
 Blog 
 -----------
