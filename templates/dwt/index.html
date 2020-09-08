@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+  <title>Dynamic Web Twain</title>
+  <meta charset="utf-8">
+  {% load static %}
+  <!-- Import Dynamic Web Twain library. Template will compile the actual path for us. -->
+  <script type="text/javascript" src="{% static 'dwt/Resources/dynamsoft.webtwain.initiate.js' %}"></script>
+  <script type="text/javascript" src="{% static 'dwt/Resources/dynamsoft.webtwain.config.js' %}"></script>
+</head>
+<body>
+  <div id="app">
+    <div id="dwtcontrolContainer"></div>
+    <button onclick="AcquireImage()">Scan</div>
+  </div>
+  <script type="text/javascript">
+    function AcquireImage() {
+      const DWObject = Dynamsoft.WebTwainEnv.GetWebTwain('dwtcontrolContainer');
+      if (DWObject) {
+        if (DWObject.UseLocalService) {
+          DWObject.SelectSource(() => {
+            var OnAcquireImageSuccess = () => DWObject.CloseSource();
+            var OnAcquireImageFailure = () => {
+              DWObject.CloseSource();
+              alert('image acquire failed');
+            };
+            DWObject.OpenSource()
+            DWObject.IfDisableSourceAfterAcquire = true;
+            DWObject.AcquireImage(OnAcquireImageSuccess, OnAcquireImageFailure);
+          }, () => {
+            console.error('SelectSource failed');
+          });
+        }
+      } else {
+        DWObject.LoadImageEx('', -1)
+      }
+    }
+  </script>
+</body>
