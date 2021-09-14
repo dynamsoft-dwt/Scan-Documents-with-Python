@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <head>
   <title>Dynamic Web Twain</title>
   <meta charset="utf-8">
@@ -7,31 +8,26 @@
   <script type="text/javascript" src="{% static 'dwt/Resources/dynamsoft.webtwain.initiate.js' %}"></script>
   <script type="text/javascript" src="{% static 'dwt/Resources/dynamsoft.webtwain.config.js' %}"></script>
 </head>
+
 <body>
   <div id="app">
     <div id="dwtcontrolContainer"></div>
-    <button onclick="AcquireImage()">Scan</div>
+    <button onclick="scan()">Scan</button>
   </div>
   <script type="text/javascript">
-    function AcquireImage() {
-      const DWObject = Dynamsoft.WebTwainEnv.GetWebTwain('dwtcontrolContainer');
-      if (DWObject) {
-        if (DWObject.UseLocalService) {
-          DWObject.SelectSource(() => {
-            var OnAcquireImageSuccess = () => DWObject.CloseSource();
-            var OnAcquireImageFailure = () => {
-              DWObject.CloseSource();
-              alert('image acquire failed');
-            };
-            DWObject.OpenSource()
-            DWObject.IfDisableSourceAfterAcquire = true;
-            DWObject.AcquireImage(OnAcquireImageSuccess, OnAcquireImageFailure);
-          }, () => {
-            console.error('SelectSource failed');
-          });
-        }
-      } else {
-        DWObject.LoadImageEx('', -1)
+    Dynamsoft.DWT.RegisterEvent('OnWebTwainReady', Dynamsoft_OnReady);
+    Dynamsoft.DWT.ResourcesPath = 'static/dwt/Resources';
+
+    var dwtObjct;
+
+    function Dynamsoft_OnReady() {
+      dwtObjct = Dynamsoft.DWT.GetWebTwain('dwtcontrolContainer');
+    }
+    function scan() {
+      if (dwtObjct) {
+        dwtObjct.OpenSource();
+        dwtObjct.IfDisableSourceAfterAcquire = true;
+        dwtObjct.AcquireImage(() => {dwtObjct.CloseSource();}, () => {dwtObjct.CloseSource();});
       }
     }
   </script>
