@@ -7,12 +7,14 @@
   <!-- Import Dynamic Web Twain library. Template will compile the actual path for us. -->
   <script type="text/javascript" src="{% static 'dwt/Resources/dynamsoft.webtwain.initiate.js' %}"></script>
   <script type="text/javascript" src="{% static 'dwt/Resources/dynamsoft.webtwain.config.js' %}"></script>
+  <script type="text/javascript" src="{% static 'jquery-3.6.0.min.js' %}"></script>
 </head>
 
 <body>
   <div id="app">
     <div id="dwtcontrolContainer"></div>
     <button onclick="scan()">Scan</button>
+    <button onclick="upload()">Upload</button>
   </div>
   <script type="text/javascript">
     Dynamsoft.DWT.RegisterEvent('OnWebTwainReady', Dynamsoft_OnReady);
@@ -29,6 +31,49 @@
         dwtObjct.IfDisableSourceAfterAcquire = true;
         dwtObjct.AcquireImage(() => {dwtObjct.CloseSource();}, () => {dwtObjct.CloseSource();});
       }
+    }
+
+    function upload() {
+      dwtObjct.HTTPPort = 8000;
+      var CurrentPathName = unescape(location.pathname); // get current PathName in plain ASCII
+      var CurrentPath = CurrentPathName.substring(0, CurrentPathName.lastIndexOf("/") + 1);
+      var strActionPage = CurrentPath + "upload";
+      var strHostIP = "127.0.0.1"; // server IP e.g. 192.168.8.84
+
+      var OnSuccess = function(httpResponse) {
+        alert("Succesfully uploaded");
+      };
+
+      var OnFailure = function(errorCode, errorString, httpResponse) {
+        alert(httpResponse);
+      };
+      var date = new Date();
+      var csrftoken = getCookie('csrftoken');
+      dwtObjct.SetHTTPFormField('csrfmiddlewaretoken', csrftoken);
+      dwtObjct.HTTPUploadThroughPostEx(
+        strHostIP,
+        dwtObjct.CurrentImageIndexInBuffer,
+        strActionPage,
+        date.getTime() + ".jpg",
+        1, // JPEG
+        OnSuccess, OnFailure
+      );
+    }
+
+    function getCookie(name) {
+      var cookieValue = null;
+      if (document.cookie && document.cookie != '') {
+          var cookies = document.cookie.split(';');
+          for (var i = 0; i < cookies.length; i++) {
+              var cookie = jQuery.trim(cookies[i]);
+              // Does this cookie string begin with the name we want?
+              if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                  cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                  break;
+              }
+          }
+      }
+      return cookieValue;
     }
   </script>
 </body>
