@@ -37,7 +37,7 @@ The sample shows how to combine [Dynamic Web TWAIN](https://www.dynamsoft.com/we
     
 5. visit `127.0.0.1:8000` in a web browser.
 
-    ![Web document scan by Python Django](https://www.dynamsoft.com/codepool/img/2020/09/django-working-2-1000x579.png)
+    ![Web document scan by Python Django](https://www.dynamsoft.com/codepool/img/2020/09/django-scan-upload-document.jpg)
 
 ## Blog 
 [Online Document Scanning Apps with Django and Dynamic Web TWAIN](https://www.dynamsoft.com/codepool/online-document-scanning-django-webtwain.html)
