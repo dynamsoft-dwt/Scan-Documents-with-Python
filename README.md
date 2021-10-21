@@ -27,7 +27,12 @@ The sample shows how to combine [Dynamic Web TWAIN](https://www.dynamsoft.com/we
 1. Download and install [Dynamic Web TWAIN](https://www.dynamsoft.com/web-twain/downloads).
 2. Create folder `static/dwt` under the project root directory.
 3. Copy and paste `Dynamic Web TWAIN SDK version/Resources` folder to `static/dwt/`.
-4. Run the project:
+4. Set license keys for Dynamic Web TWAIN and Dynamsoft Barcode Reader.
+    
+    ```js
+    Dynamsoft.DWT.ProductKey = 'LICENSE-KEY';
+    ```
+5. Run the project:
 
     ```bash
     python manage.py makemigrations
@@ -35,7 +40,7 @@ The sample shows how to combine [Dynamic Web TWAIN](https://www.dynamsoft.com/we
     python manage.py runserver
     ``` 
     
-5. visit `127.0.0.1:8000` in a web browser.
+6. Visit `127.0.0.1:8000` in a web browser.
 
     ![Web document scan by Python Django](https://www.dynamsoft.com/codepool/img/2020/09/django-scan-upload-document.jpg)
 
