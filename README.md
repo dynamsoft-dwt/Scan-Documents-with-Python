@@ -24,7 +24,7 @@ The sample shows how to combine [Dynamic Web TWAIN](https://www.dynamsoft.com/we
     ```
 
 ## Usage
-1. Download and instal [Dynamic Web TWAIN](https://www.dynamsoft.com/web-twain/downloads).
+1. Download and install [Dynamic Web TWAIN](https://www.dynamsoft.com/web-twain/downloads).
 2. Create folder `static/dwt` under the project root directory.
 3. Copy and paste `Dynamic Web TWAIN SDK version/Resources` folder to `static/dwt/`.
 4. Run the project:
