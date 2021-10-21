@@ -4,6 +4,7 @@
   <title>Dynamic Web Twain</title>
   <meta charset="utf-8">
   {% load static %}
+  {% csrf_token %}
   <!-- Import Dynamic Web Twain library. Template will compile the actual path for us. -->
   <script type="text/javascript" src="{% static 'dwt/Resources/dynamsoft.webtwain.initiate.js' %}"></script>
   <script type="text/javascript" src="{% static 'dwt/Resources/dynamsoft.webtwain.config.js' %}"></script>
