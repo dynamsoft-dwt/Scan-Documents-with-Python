@@ -4,7 +4,7 @@ Online Document Scanning with Django and Dynamic Web TWAIN
 The sample shows how to combine [Dynamic Web TWAIN](https://www.dynamsoft.com/web-twain/overview/) and [Django](https://docs.djangoproject.com/en/3.2/) to implement a simple online document scanning application with a few lines of code. 
 
 ## About Dynamic Web TWAIN
-- [![](https://img.shields.io/badge/Download-Offline%20SDK-orange)](https://www.dynamsoft.com/web-twain/downloads)
+
 - [![](https://img.shields.io/badge/Get-30--day%20FREE%20Trial%20License-blue)](https://www.dynamsoft.com/customer/license/trialLicense/?product=dwt)
 
 
@@ -23,16 +23,15 @@ The sample shows how to combine [Dynamic Web TWAIN](https://www.dynamsoft.com/we
     python -m django --version
     ```
 
-## Usage
-1. Download and install [Dynamic Web TWAIN](https://www.dynamsoft.com/web-twain/downloads).
-2. Create folder `static/dwt` under the project root directory.
-3. Copy and paste `Dynamic Web TWAIN SDK version/Resources` folder to `static/dwt/`.
-4. Set license keys for Dynamic Web TWAIN and Dynamsoft Barcode Reader.
+## How to Run this Sample
+
+1. Request a trial license of Dynamic Web TWAIN here: https://www.dynamsoft.com/customer/license/trialLicense/?product=dwt
+2. Go to the file /static/dwt/Resources/dynamsoft.webtwain.config.js, set license key for Dynamic Web TWAIN.
     
     ```js
     Dynamsoft.DWT.ProductKey = 'LICENSE-KEY';
     ```
-5. Run the project:
+2. Run the project:
 
     ```bash
     python manage.py makemigrations
@@ -40,7 +39,7 @@ The sample shows how to combine [Dynamic Web TWAIN](https://www.dynamsoft.com/we
     python manage.py runserver
     ``` 
     
-6. Visit `127.0.0.1:8000` in a web browser.
+3. Visit `127.0.0.1:8000` in a web browser.
 
     ![Web document scan by Python Django](https://www.dynamsoft.com/codepool/img/2020/09/django-scan-upload-document.jpg)
 
